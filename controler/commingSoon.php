@@ -4,8 +4,8 @@ function display_page() {
     require "./model/BD.php";
     require_once "./model/M_Lang.php";
     require "./model/M_Post.php";
-    $selectedLang = M_Lang::readLang();
     M_Lang::init();
+    $selectedLang = M_Lang::currentLang();
     $database = new DB();
     $listLang = M_Lang::getAllLang($database);
     $contents = M_Post::getPost($database, $selectedLang);

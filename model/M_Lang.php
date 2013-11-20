@@ -21,7 +21,7 @@ class M_Lang {
     }
 
     public static function init() {
-        if ($_COOKIE["languageDes"] != "EN" || $_COOKIE["languageDes"] != "FR") {
+        if (!isset(self::$_selectedLang)) {
             self::changeLang("EN");
         }
     }
